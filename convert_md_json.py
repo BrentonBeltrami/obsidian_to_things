@@ -3,6 +3,7 @@ import sys
 import re 
 from urllib.parse import quote
 import webbrowser
+from datetime import date
 
 
 
@@ -23,8 +24,8 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         path = os.path.expanduser(sys.argv[1])
     else:
-        # paste path to note here 
-        path = os.path.expanduser("~/Desktop/vault/test_doc.md")
+        today = date.today().strftime('%Y-%m-%d')
+        
+        path = os.path.expanduser("~/Desktop/Vault/Daily Notes/" + today + ".md")
 
     import_to_things(path)
-
